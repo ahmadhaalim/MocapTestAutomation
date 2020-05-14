@@ -29,3 +29,39 @@ Feature: User Register Functionality Check
       | dummy1@gmail.com | 081234567    | pass          |                      |
       | dummy1@gmail.com | 081234567    |               | pass                 |
       | dummy1@gmail.com | 081234567    |               |                      |
+      | dummy1@gmail.com |              | PASSword123?! | pass                 |
+      | dummy1@gmail.com |              | pass          | pass                 |
+      | dummy1@gmail.com |              | PASSword123?! |                      |
+      | dummy1@gmail.com |              | pass          |                      |
+      | dummy1@gmail.com |              |               | pass                 |
+      | dummy1@gmail.com |              |               |                      |
+      |                  | 081271465456 | PASSword123?! | pass                 |
+      |                  | 081271465456 | pass          | pass                 |
+      |                  | 081271465456 | PASSword123?! |                      |
+      |                  | 081271465456 | pass          |                      |
+      |                  | 081271465456 |               | pass                 |
+      |                  | 081271465456 |               |                      |
+      |                  | 081234567    | PASSword123?! | pass                 |
+      |                  | 081234567    | pass          | pass                 |
+      |                  | 081234567    | PASSword123?! |                      |
+      |                  | 081234567    | pass          |                      |
+      |                  | 081234567    |               | pass                 |
+      |                  | 081234567    |               |                      |
+      |                  |              | PASSword123?! | pass                 |
+      |                  |              | pass          | pass                 |
+      |                  |              | PASSword123?! |                      |
+      |                  |              | pass          |                      |
+      |                  |              |               | pass                 |
+      |                  |              |               |                      |
+      |                  |              | PASSword123?! | pass                 |
+      |                  |              | pass          | pass                 |
+      |                  |              | PASSword123?! |                      |
+      |                  |              | pass          |                      |
+      |                  |              |               | pass                 |
+      |                  |              |               |                      |
+      |                  |              | PASSword123?! | pass                 |
+      |                  |              | pass          | pass                 |
+      |                  |              | PASSword123?! |                      |
+      |                  |              | pass          |                      |
+      |                  |              |               | pass                 |
+      |                  |              |               |                      |
