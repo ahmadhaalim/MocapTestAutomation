@@ -48,7 +48,7 @@ Feature: User Login Functionality Check
     When user input email or phone number "<identifier>"
     And user input password "<password>"
     And user click login button
-    Then user see warning toast on login page "Internet or Server is ERROR"
+    Then user see warning toast on login page "Connection Error"
     Examples:
       | identifier       | password       |
       | dummy@gmail.com  | PASSword123?!  |
