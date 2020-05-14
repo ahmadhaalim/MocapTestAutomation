@@ -56,16 +56,31 @@ public class AndroidPageObject {
         element.isEnabled();
     }
 
+    /**
+     * Perform checking if element status is displayed and returning true condition
+     * @param id locator of element
+     * @return return condition
+     */
     public boolean checkIfDisplayed(By id) {
         WebElement element = androidDriver.findElement(id);
         return element.isDisplayed();
     }
 
+    /**
+     * Perform checking if element status is enabled and returning true condition
+     * @param id locator of element
+     * @return return condition
+     */
     public boolean checkIfEnabled(By id) {
         WebElement element = androidDriver.findElement(id);
         return element.isEnabled();
     }
 
+    /**
+     * Perform checking if toast is appeared and returning true condition
+     * @param id locator of element
+     * @return return condition
+     */
     public String checkToast(By id) {
         WebElement toast = androidDriver.findElement(id);
         return toast.getAttribute("name");

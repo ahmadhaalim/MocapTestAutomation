@@ -70,7 +70,7 @@ public class UserLoginStepsDefinition {
 
     @When("user click register text")
     public void userClickRegisterText() {
-        loginPage.clickForgotPasswordText();
+        loginPage.clickRegisterText();
     }
 
     @Then("user directed to register page")
