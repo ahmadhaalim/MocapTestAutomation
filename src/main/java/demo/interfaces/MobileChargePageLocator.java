@@ -11,8 +11,8 @@ public interface MobileChargePageLocator {
     By PRICE_OPTIONS = MobileBy.id("cv_credit_amount_main");
 
     By PAYMENT_POPUP_PRICE = MobileBy.id("tv_amount_pay");
-    By PAYMENT_POPUP_BALANCE = MobileBy.id("radio_app_balance_main");
-    By PAYMENT_POPUP_DIRECT = MobileBy.id("radio_direct_transfer_main");
+    By PAYMENT_POPUP_BALANCE_RADIO = MobileBy.id("radio_app_balance_main");
+    By PAYMENT_POPUP_DIRECT_RADIO = MobileBy.id("radio_direct_transfer_main");
     By PAYMENT_POPUP_PAYNOW = MobileBy.id("btn_pay_now_main");
     By PAYMENT_POPUP_EXIT = MobileBy.id("");
 

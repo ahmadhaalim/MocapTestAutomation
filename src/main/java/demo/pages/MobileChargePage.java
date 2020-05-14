@@ -1,9 +1,7 @@
 package demo.pages;
 
 import demo.webdriver.AndroidDriverInstance;
-import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidElement;
-import org.openqa.selenium.By;
 import pageobjects.AndroidPageObject;
 import demo.interfaces.MobileChargePageLocator;
 
@@ -76,7 +74,11 @@ public class MobileChargePage extends AndroidPageObject {
     }
 
     public void paymentClickBalance(){
-        clickOn(MobileChargePageLocator.PAYMENT_POPUP_BALANCE);
+        clickOn(MobileChargePageLocator.PAYMENT_POPUP_BALANCE_RADIO);
+    }
+
+    public void paymentClickDirect(){
+        clickOn(MobileChargePageLocator.PAYMENT_POPUP_DIRECT_RADIO);
     }
 
     public void paymentClickPayNow(){
@@ -97,6 +99,14 @@ public class MobileChargePage extends AndroidPageObject {
         AndroidElement destination = AndroidDriverInstance.androidDriver
                 .findElement(MobileChargePageLocator.PAYMENT_SUCCESSFUL_DESTINATION);
         return destination.getText();
+    }
+
+    public void clickTakePhotoReceipt(){
+        clickOn(MobileChargePageLocator.PAYMENT_DIRECT_POPUP_PHOTORECEIPT_BUTTON);
+    }
+
+    public boolean TakePhotoReceiptIsDisplayed(){
+        return checkIfDisplayed(MobileChargePageLocator.PAYMENT_DIRECT_POPUP_PHOTORECEIPT_BUTTON);
     }
 
     public int random(int options) {

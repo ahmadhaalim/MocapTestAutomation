@@ -1,6 +1,8 @@
 package demo.steps;
 
+import demo.interfaces.TakePhotoPageLocator;
 import demo.pages.MobileChargePage;
+import demo.pages.TakePhotoPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,6 +13,7 @@ public class MobileChargeDefs {
     MobileChargePage mobileChargePage = new MobileChargePage();
     String defaultNumber = "";
     String price = "";
+    TakePhotoPage takePhotoPage = new TakePhotoPage();
 
     @Given("User is on the mobile top up page")
     public void userIsOnTheMobileTopUpPage() {
@@ -98,6 +101,24 @@ public class MobileChargeDefs {
 
     @And("User click direct transfer")
     public void userClickDirectTransfer() {
+        mobileChargePage.paymentClickDirect();
+    }
 
+    @And("User click take photo receipt")
+    public void userClickTakePhotoReceipt() {
+        mobileChargePage.clickTakePhotoReceipt();
+    }
+
+
+    @And("User click back button")
+    public void userClickBackButton() {
+        takePhotoPage.clickBackButton();
+    }
+
+
+    @Then("User is back to the direct transfer pop up")
+    public void userIsBackToTheDirectTransferPopUp() {
+        boolean result = mobileChargePage.TakePhotoReceiptIsDisplayed();
+        Assert.assertTrue(result);
     }
 }

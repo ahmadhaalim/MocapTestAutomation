@@ -17,5 +17,7 @@ Feature: Mobile charge top up with transfer
       And User click direct transfer
       And User click Pay Now
       And User click take photo receipt
+      And User click back button
+      Then User is back to the direct transfer pop up
 
 
