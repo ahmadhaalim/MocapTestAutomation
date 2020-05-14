@@ -1,4 +1,4 @@
-@Android @UMB
+@Android @MobileChargeBalance
 
 Feature: Mobile charge top up with In App Balance
 
@@ -9,6 +9,7 @@ Feature: Mobile charge top up with In App Balance
     And user click login button
     Then user directed to home page
 
+  @UMB001
   Scenario: User successfully do mobile credit top up with In App Balance using default number
     Given User is on the mobile top up page
     And User see the account default number
@@ -21,6 +22,7 @@ Feature: Mobile charge top up with In App Balance
     Then User see payment successful pop up with the amount they buy
     And the destination phone number
 
+  @UMB002
   Scenario: User click exit button on the payment pop up
     Given User is on the mobile top up page
     And User see the account default number
@@ -31,6 +33,7 @@ Feature: Mobile charge top up with In App Balance
     And User click exit button on the pop up
     Then User focused back on the mobile top up page
 
+  @UMB003-042
   Scenario Outline: User successfully do mobile credit top up with In App Balance by manually input 12 digit and a
   valid provider
     Given User is on the mobile top up page
@@ -87,6 +90,7 @@ Feature: Mobile charge top up with In App Balance
       | 838567890123 | AXIS      |
       | 831567890123 | AXIS      |
 
+  @UMB043-082
   Scenario Outline: User succesfully do mobile credit top up with In App Balance by manually input 11 digit and a
   valid provider
     Given User is on the mobile top up page
@@ -143,6 +147,7 @@ Feature: Mobile charge top up with In App Balance
       | 83856789012  | AXIS      |
       | 83156789012  | AXIS      |
 
+  @UMB88-127
   Scenario Outline: User see warning invalid number, If user input 8 digit number with valid provider
     Given User is on the mobile top up page
     When User manually input "<phone_number>"
@@ -190,6 +195,7 @@ Feature: Mobile charge top up with In App Balance
       | 83856789     |
       | 83156789     |
 
+  @UMB130-169
   Scenario Outline: User see warning invalid number, If user input 13 digit number with valid provider
     Given User is on the mobile top up page
     When User manually input "<phone_number>"
@@ -236,3 +242,51 @@ Feature: Mobile charge top up with In App Balance
       | 8335678901234 |
       | 8385678901234 |
       | 8315678901234 |
+
+    @
+  Scenario Outline: User manually input valid number but app failed to connect to server
+    Given User is on the mobile top up page
+    When User manually input "<phone_number>"
+    Then User see warning server is offline "Server Error"
+    Examples:
+      | phone_number |
+      | 859567890123 |
+      | 877567890123 |
+      | 878567890123 |
+      | 817567890123 |
+      | 818567890123 |
+      | 819567890123 |
+      | 811567890123 |
+      | 812567890123 |
+      | 813567890123 |
+      | 821567890123 |
+      | 822567890123 |
+      | 823567890123 |
+      | 852567890123 |
+      | 853567890123 |
+      | 851567890123 |
+      | 898567890123 |
+      | 899567890123 |
+      | 895567890123 |
+      | 896567890123 |
+      | 897567890123 |
+      | 814567890123 |
+      | 815567890123 |
+      | 816567890123 |
+      | 855567890123 |
+      | 856567890123 |
+      | 857567890123 |
+      | 858567890123 |
+      | 889567890123 |
+      | 881567890123 |
+      | 882567890123 |
+      | 883567890123 |
+      | 886567890123 |
+      | 887567890123 |
+      | 888567890123 |
+      | 884567890123 |
+      | 885567890123 |
+      | 832567890123 |
+      | 833567890123 |
+      | 838567890123 |
+      | 831567890123 |

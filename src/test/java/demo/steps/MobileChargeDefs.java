@@ -121,4 +121,25 @@ public class MobileChargeDefs {
         boolean result = mobileChargePage.TakePhotoReceiptIsDisplayed();
         Assert.assertTrue(result);
     }
+
+    @Then("User see warning server is offline {string}")
+    public void userSeeWarningServerIsOffline(String expected) {
+        String toast = mobileChargePage.getToast();
+        Assert.assertEquals(expected,toast);
+    }
+
+    @And("User click OK button on the payment confirmation")
+    public void userClickOKButtonOnThePaymentConfirmation() {
+        mobileChargePage.clickOkPaymentConfirmation();
+    }
+
+    @And("User click the history tab")
+    public void userClickTheHistoryTab() {
+        mobileChargePage.clickHistoryMenu();
+    }
+
+    @Then("User can see his successful transaction")
+    public void userCanSeeHisSuccessfulTransaction() {
+
+    }
 }

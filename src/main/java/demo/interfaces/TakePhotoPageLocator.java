@@ -8,4 +8,5 @@ public interface TakePhotoPageLocator {
     By UPLOAD_BUTTON = MobileBy.id("btn_upload");
     By BACK_BUTTON = MobileBy.id("tv_back_receipt_preview");
     By PHOTO_PREVIEW = MobileBy.id("iv_receipt_preview");
+    By PAYMENT_CONFIRMATION_DIRECT = MobileBy.id("btn_back_to_main_direct");
 }

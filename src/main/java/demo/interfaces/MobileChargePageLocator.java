@@ -6,9 +6,10 @@ import org.openqa.selenium.By;
 public interface MobileChargePageLocator {
     By INPUT_PHONE = MobileBy.id("et_phone_number_main");
     By PROVIDER_LOGO = MobileBy.id("iv_logo_provider");
-    By HISTORY_TAB = MobileBy.id("");
-    By ACCOUNT_TAB = MobileBy.id("");
+    By HISTORY_TAB = MobileBy.id("menu_history");
+    By ACCOUNT_TAB = MobileBy.id("menu_profile");
     By PRICE_OPTIONS = MobileBy.id("cv_credit_amount_main");
+    By TOAST_POPUP = MobileBy.xpath("//android.widget.Toast[1]");
 
     By PAYMENT_POPUP_PRICE = MobileBy.id("tv_amount_pay");
     By PAYMENT_POPUP_BALANCE_RADIO = MobileBy.id("radio_app_balance_main");

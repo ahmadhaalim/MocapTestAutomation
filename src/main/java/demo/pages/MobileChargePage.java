@@ -109,6 +109,20 @@ public class MobileChargePage extends AndroidPageObject {
         return checkIfDisplayed(MobileChargePageLocator.PAYMENT_DIRECT_POPUP_PHOTORECEIPT_BUTTON);
     }
 
+    public void clickOkPaymentConfirmation(){
+        clickOn(MobileChargePageLocator.PAYMENT_SUCCESSFUL_CONFIRM);
+    }
+
+    public void clickHistoryMenu(){
+        clickOn(MobileChargePageLocator.HISTORY_TAB);
+    }
+
+
+
+    public String getToast(){
+        return checkToast(MobileChargePageLocator.TOAST_POPUP);
+    }
+
     public int random(int options) {
         Random rand = new Random();
         return rand.nextInt(options);
