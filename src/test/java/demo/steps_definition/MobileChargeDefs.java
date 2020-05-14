@@ -74,7 +74,5 @@ public class MobileChargeDefs {
     public void userSeeWarningInvalidNumberFormat() {
     }
 
-    @When("User manually input <phone_number>")
-    public void userManuallyInputPhone_number() {
-    }
+
 }
