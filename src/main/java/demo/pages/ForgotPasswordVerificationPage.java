@@ -15,5 +15,5 @@ public class ForgotPasswordVerificationPage extends AndroidPageObject {
     }
     public void inputOTP(String otp) {typeON(ForgotPasswordVerificationPageLocator.OTP_FIELD, otp);}
 
-    public String getToastMessage() { return checkToast(RegisterPageLocator.TOAST_POPUP); }
+    public String getToastMessage() { return checkToast(ForgotPasswordVerificationPageLocator.TOAST_POPUP); }
 }
