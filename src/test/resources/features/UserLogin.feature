@@ -1,4 +1,4 @@
-@Android
+@Android @UserLogin
 
 Feature: User Login Functionality Check
 
