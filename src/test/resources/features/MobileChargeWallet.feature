@@ -3,8 +3,11 @@
 Feature: Mobile charge top up with In App Balance
 
   Background:
-    Given User is logged In
-
+    Given user is on login page
+    When user input email or phone number "dummy@gmail.com"
+    And user input password "PASSword123?!"
+    And user click login button
+    Then user directed to home page
 
   Scenario: User successfully do mobile credit top up with In App Balance using default number
     Given User is on the mobile top up page
@@ -15,7 +18,7 @@ Feature: Mobile charge top up with In App Balance
     And User see the choose payment method pop-up with correct amount to pay
     And User click In App balance
     And User click Pay Now
-    Then User see payment succesfull pop up with the amount they buy
+    Then User see payment successful pop up with the amount they buy
     And the destination phone number
 
   Scenario: User click exit button on the payment pop up
@@ -31,118 +34,118 @@ Feature: Mobile charge top up with In App Balance
   Scenario Outline: User successfully do mobile credit top up with In App Balance by manually input 12 digit and a
   valid provider
     Given User is on the mobile top up page
-    When User manually input <phone_number>
+    When User manually input "<phone_number>"
     And User see the provider logo
     And User see mobile charge options
-    And User choose one of the options
+    And User choose one of the "<provider>" options
     And User see the choose payment method pop-up with correct amount to pay
     And User click In App balance
     And User click Pay Now
-    Then User see payment succesfull pop up with the amount they buy
+    Then User see payment successful pop up with the amount they buy
     And the destination phone number
 
     Examples:
-      | phone_number |
-      | 859567890123 |
-      | 877567890123 |
-      | 878567890123 |
-      | 817567890123 |
-      | 818567890123 |
-      | 819567890123 |
-      | 811567890123 |
-      | 812567890123 |
-      | 813567890123 |
-      | 821567890123 |
-      | 822567890123 |
-      | 823567890123 |
-      | 852567890123 |
-      | 853567890123 |
-      | 851567890123 |
-      | 898567890123 |
-      | 899567890123 |
-      | 895567890123 |
-      | 896567890123 |
-      | 897567890123 |
-      | 814567890123 |
-      | 815567890123 |
-      | 816567890123 |
-      | 855567890123 |
-      | 856567890123 |
-      | 857567890123 |
-      | 858567890123 |
-      | 889567890123 |
-      | 881567890123 |
-      | 882567890123 |
-      | 883567890123 |
-      | 886567890123 |
-      | 887567890123 |
-      | 888567890123 |
-      | 884567890123 |
-      | 885567890123 |
-      | 832567890123 |
-      | 833567890123 |
-      | 838567890123 |
-      | 831567890123 |
+      | phone_number | provider  |
+      | 859567890123 | XL
+      | 877567890123 | XL        |
+      | 878567890123 | XL        |
+      | 817567890123 | XL        |
+      | 818567890123 | XL        |
+      | 819567890123 | XL        |
+      | 811567890123 | TELKOMSEL |
+      | 812567890123 | TELKOMSEL |
+      | 813567890123 | TELKOMSEL |
+      | 821567890123 | TELKOMSEL |
+      | 822567890123 | TELKOMSEL |
+      | 823567890123 | TELKOMSEL |
+      | 852567890123 | TELKOMSEL |
+      | 853567890123 | TELKOMSEL |
+      | 851567890123 | TELKOMSEL |
+      | 898567890123 | TRI       |
+      | 899567890123 | TRI       |
+      | 895567890123 | TRI       |
+      | 896567890123 | TRI       |
+      | 897567890123 | TRI       |
+      | 814567890123 | INDOSAT   |
+      | 815567890123 | INDOSAT   |
+      | 816567890123 | INDOSAT   |
+      | 855567890123 | INDOSAT   |
+      | 856567890123 | INDOSAT   |
+      | 857567890123 | INDOSAT   |
+      | 858567890123 | INDOSAT   |
+      | 889567890123 | SMARTFREN |
+      | 881567890123 | SMARTFREN |
+      | 882567890123 | SMARTFREN |
+      | 883567890123 | SMARTFREN |
+      | 886567890123 | SMARTFREN |
+      | 887567890123 | SMARTFREN |
+      | 888567890123 | SMARTFREN |
+      | 884567890123 | SMARTFREN |
+      | 885567890123 | SMARTFREN |
+      | 832567890123 | AXIS      |
+      | 833567890123 | AXIS      |
+      | 838567890123 | AXIS      |
+      | 831567890123 | AXIS      |
 
   Scenario Outline: User succesfully do mobile credit top up with In App Balance by manually input 11 digit and a
   valid provider
     Given User is on the mobile top up page
-    When User manually input <phone_number>
+    When User manually input "<phone_number>"
     And User see the provider logo
     And User see mobile charge options
-    And User choose one of the options
+    And User choose one of the "<provider>" options
     And User see the choose payment method pop-up with correct amount to pay
     And User click In App balance
     And User click Pay Now
-    Then User see payment succesfull pop up with the amount they buy
+    Then User see payment successful pop up with the amount they buy
     And the destination phone number
 
     Examples:
-      | phone_number |
-      | 85956789012  |
-      | 87756789012  |
-      | 87856789012  |
-      | 81756789012  |
-      | 81856789012  |
-      | 81956789012  |
-      | 81156789012  |
-      | 81256789012  |
-      | 81356789012  |
-      | 82156789012  |
-      | 82256789012  |
-      | 82356789012  |
-      | 85256789012  |
-      | 85356789012  |
-      | 85156789012  |
-      | 89856789012  |
-      | 89956789012  |
-      | 89556789012  |
-      | 89656789012  |
-      | 89756789012  |
-      | 81456789012  |
-      | 81556789012  |
-      | 81656789012  |
-      | 85556789012  |
-      | 85656789012  |
-      | 85756789012  |
-      | 85856789012  |
-      | 88956789012  |
-      | 88156789012  |
-      | 88256789012  |
-      | 88356789012  |
-      | 88656789012  |
-      | 88756789012  |
-      | 88856789012  |
-      | 88456789012  |
-      | 88556789012  |
-      | 83256789012  |
-      | 83356789012  |
-      | 83856789012  |
-      | 83156789012  |
+      | phone_number | provider  |
+      | 85956789012  | XL        |
+      | 87756789012  | XL        |
+      | 87856789012  | XL        |
+      | 81756789012  | XL        |
+      | 81856789012  | XL        |
+      | 81956789012  | XL        |
+      | 81156789012  | TELKOMSEL |
+      | 81256789012  | TELKOMSEL |
+      | 81356789012  | TELKOMSEL |
+      | 82156789012  | TELKOMSEL |
+      | 82256789012  | TELKOMSEL |
+      | 82356789012  | TELKOMSEL |
+      | 85256789012  | TELKOMSEL |
+      | 85356789012  | TELKOMSEL |
+      | 85156789012  | TELKOMSEL |
+      | 89856789012  | TRI       |
+      | 89956789012  | TRI       |
+      | 89556789012  | TRI       |
+      | 89656789012  | TRI       |
+      | 89756789012  | TRI       |
+      | 81456789012  | INDOSAT   |
+      | 81556789012  | INDOSAT   |
+      | 81656789012  | INDOSAT   |
+      | 85556789012  | INDOSAT   |
+      | 85656789012  | INDOSAT   |
+      | 85756789012  | INDOSAT   |
+      | 85856789012  | INDOSAT   |
+      | 88956789012  | SMARTFREN |
+      | 88156789012  | SMARTFREN |
+      | 88256789012  | SMARTFREN |
+      | 88356789012  | SMARTFREN |
+      | 88656789012  | SMARTFREN |
+      | 88756789012  | SMARTFREN |
+      | 88856789012  | SMARTFREN |
+      | 88456789012  | SMARTFREN |
+      | 88556789012  | SMARTFREN |
+      | 83256789012  | AXIS      |
+      | 83356789012  | AXIS      |
+      | 83856789012  | AXIS      |
+      | 83156789012  | AXIS      |
 
   Scenario Outline: User see warning invalid number, If user input 8 digit number with valid provider
     Given User is on the mobile top up page
-    When User manually input <phone_number>
+    When User manually input "<phone_number>"
     Then User see warning invalid number format
     Examples:
       | phone_number |
@@ -187,9 +190,9 @@ Feature: Mobile charge top up with In App Balance
       | 83856789     |
       | 83156789     |
 
-  Scenario Outline: User see warning invalid number, If user input 8 digit number with valid provider
+  Scenario Outline: User see warning invalid number, If user input 13 digit number with valid provider
     Given User is on the mobile top up page
-    When User manually input <phone_number>
+    When User manually input "<phone_number>"
     Then User see warning invalid number format
     Examples:
       | phone_number  |
