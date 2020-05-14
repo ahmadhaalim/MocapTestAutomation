@@ -47,12 +47,12 @@ public class MobileChargeDefs {
 
     @And("User click In App balance")
     public void userClickInAppBalance() {
-        mobileChargePage.clickBalance();
+        mobileChargePage.paymentClickBalance();
     }
 
     @And("User click Pay Now")
     public void userClickPayNow() {
-        mobileChargePage.clickPayNow();
+        mobileChargePage.paymentClickPayNow();
     }
 
     @Then("User see payment successful pop up with the amount they buy")
@@ -69,24 +69,35 @@ public class MobileChargeDefs {
 
     @And("User click exit button on the pop up")
     public void userClickExitButtonOnThePopUp() {
+        mobileChargePage.paymentClickExit();
     }
 
     @Then("User focused back on the mobile top up page")
     public void userFocusedBackOnTheMobileTopUpPage() {
+        boolean result = mobileChargePage.isInMainPage();
+        Assert.assertTrue(result);
     }
 
     @Then("User see warning invalid number format")
     public void userSeeWarningInvalidNumberFormat() {
+        String result = "";
+        String warning = "";
+        Assert.assertEquals(warning, result);
     }
 
 
     @When("User manually input {string}")
     public void userManuallyInput(String number) {
-
+        mobileChargePage.inputNumber(number);
     }
 
     @When("User choose one of the options")
     public void userChooseOneOfTheOptions() {
-        mobileChargePage.chooseFirstOption();
+        price = mobileChargePage.chooseFirstOption();
+    }
+
+    @And("User click direct transfer")
+    public void userClickDirectTransfer() {
+
     }
 }

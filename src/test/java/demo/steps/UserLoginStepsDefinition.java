@@ -40,5 +40,4 @@ public class UserLoginStepsDefinition {
         Assert.assertTrue(actual);
     }
 
-
 }

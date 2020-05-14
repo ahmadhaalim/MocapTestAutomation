@@ -1,6 +1,7 @@
 package demo.pages;
 
 import demo.webdriver.AndroidDriverInstance;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.By;
 import pageobjects.AndroidPageObject;
@@ -10,13 +11,18 @@ import java.util.List;
 import java.util.Random;
 
 public class MobileChargePage extends AndroidPageObject {
-    public void isInMainPage() {
-        waitUntilDisplayed(MobileChargePageLocator.INPUT_PHONE);
+    public boolean isInMainPage() {
+        return checkIfDisplayed(MobileChargePageLocator.INPUT_PHONE);
     }
+
 
     public String getDefaultNumber() {
         AndroidElement editText = AndroidDriverInstance.androidDriver.findElement(MobileChargePageLocator.INPUT_PHONE);
         return editText.getText();
+    }
+
+    public void inputNumber(String number){
+        typeON(MobileChargePageLocator.INPUT_PHONE,number);
     }
 
     public void mobileChargeOptionsIsDisplayed() {
@@ -69,12 +75,16 @@ public class MobileChargePage extends AndroidPageObject {
         return price.getText();
     }
 
-    public void clickBalance(){
+    public void paymentClickBalance(){
         clickOn(MobileChargePageLocator.PAYMENT_POPUP_BALANCE);
     }
 
-    public void clickPayNow(){
+    public void paymentClickPayNow(){
         clickOn(MobileChargePageLocator.PAYMENT_POPUP_PAYNOW);
+    }
+
+    public void paymentClickExit(){
+        clickOn(MobileChargePageLocator.PAYMENT_POPUP_EXIT);
     }
 
     public String paymentPriceSuccess(){
