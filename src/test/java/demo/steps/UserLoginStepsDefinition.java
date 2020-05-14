@@ -1,7 +1,9 @@
 package demo.steps;
 
+import demo.pages.ForgotPasswordPage;
 import demo.pages.HomePage;
 import demo.pages.LoginPage;
+import demo.pages.RegisterPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,6 +14,8 @@ public class UserLoginStepsDefinition {
 
     LoginPage loginPage = new LoginPage();
     HomePage homePage = new HomePage();
+    ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
+    RegisterPage registerPage = new RegisterPage();
 
     @Given("user is on login page")
     public void userIsOnLoginPage() {
@@ -40,4 +44,39 @@ public class UserLoginStepsDefinition {
         Assert.assertTrue(actual);
     }
 
+    @Then("user see warning toast on login page {string}")
+    public void userSeeWarningToastOnLoginPage(String comparison) {
+        String toast = loginPage.getToastMessage();
+        Assert.assertEquals(toast, comparison);
+    }
+
+    @Then("user see login button doesn't active")
+    public void userSeeLoginButtonDoesnTActive() {
+        boolean actual = loginPage.checkLoginButton();
+        Assert.assertFalse(actual);
+    }
+
+    @When("user click forgot password text")
+    public void userClickForgotPasswordText() {
+        loginPage.clickForgotPasswordText();
+    }
+
+    @Then("user directed to forgot password page")
+    public void userDirectedToForgotPasswordPage() {
+        forgotPasswordPage.isOnPage();
+        boolean actual = forgotPasswordPage.checkIfNextButtonIsDisplayed();
+        Assert.assertTrue(actual);
+    }
+
+    @When("user click register text")
+    public void userClickRegisterText() {
+        loginPage.clickForgotPasswordText();
+    }
+
+    @Then("user directed to register page")
+    public void userDirectedToRegisterPage() {
+        registerPage.isOnPage();
+        boolean actual = registerPage.checkIfRegisterButtonIsDisplayed();
+        Assert.assertTrue(actual);
+    }
 }

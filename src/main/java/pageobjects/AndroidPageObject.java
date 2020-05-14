@@ -57,9 +57,17 @@ public class AndroidPageObject {
     }
 
     public boolean checkIfDisplayed(By id) {
-        WebDriverWait wait = new WebDriverWait(androidDriver, 5);
-        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(id));
+        WebElement element = androidDriver.findElement(id);
         return element.isDisplayed();
     }
 
+    public boolean checkIfEnabled(By id) {
+        WebElement element = androidDriver.findElement(id);
+        return element.isEnabled();
+    }
+
+    public String checkToast(By id) {
+        WebElement toast = androidDriver.findElement(id);
+        return toast.getAttribute("name");
+    }
 }
