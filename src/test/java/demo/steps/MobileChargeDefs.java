@@ -1,6 +1,7 @@
 package demo.steps;
 
 import demo.interfaces.TakePhotoPageLocator;
+import demo.pages.HistoryPage;
 import demo.pages.MobileChargePage;
 import demo.pages.TakePhotoPage;
 import io.cucumber.java.en.And;
@@ -14,6 +15,7 @@ public class MobileChargeDefs {
     String defaultNumber = "";
     String price = "";
     TakePhotoPage takePhotoPage = new TakePhotoPage();
+    HistoryPage historyPage = new HistoryPage();
 
     @Given("User is on the mobile top up page")
     public void userIsOnTheMobileTopUpPage() {
@@ -140,6 +142,17 @@ public class MobileChargeDefs {
 
     @Then("User can see his successful transaction")
     public void userCanSeeHisSuccessfulTransaction() {
+        boolean result = historyPage.itemHistoryIsDisplayed();
+        Assert.assertTrue(result);
+    }
 
+    @And("User click upload")
+    public void userClickUpload() {
+        takePhotoPage.clickUploadButton();
+    }
+
+    @And("User click take photo")
+    public void userClickTakePhoto() {
+        takePhotoPage.clickTakePhoto();
     }
 }

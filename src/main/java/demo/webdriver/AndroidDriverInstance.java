@@ -24,6 +24,7 @@ public class AndroidDriverInstance {
         caps.setCapability("app",
                 System.getProperty("user.dir") + File.separator + "APP" + File.separator + "mokapos.apk");
         caps.setCapability("automationName", "UiAutomator2");
+//        caps.setCapability("noReset","true");
         try {
             androidDriver = new AndroidDriver<>(new URL(appiumUrl), caps);
             androidDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

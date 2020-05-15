@@ -17,8 +17,8 @@ public interface MobileChargePageLocator {
     By PAYMENT_POPUP_PAYNOW = MobileBy.id("btn_pay_now_main");
     By PAYMENT_POPUP_EXIT = MobileBy.id("");
 
-    By PAYMENT_SUCCESSFUL_PRICE = MobileBy.id("");
-    By PAYMENT_SUCCESSFUL_DESTINATION = MobileBy.id("");
+    By PAYMENT_SUCCESSFUL_PRICE = MobileBy.id("tv_message_2");
+    By PAYMENT_SUCCESSFUL_DESTINATION = MobileBy.id("tv_message_4");
     By PAYMENT_SUCCESSFUL_CONFIRM = MobileBy.id("btn_back_to_main_app_balance");
 
     By PAYMENT_DIRECT_POPUP_PHOTORECEIPT_BUTTON = MobileBy.id("btn_take_photo_direct");

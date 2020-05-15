@@ -37,7 +37,7 @@ Feature: Mobile charge top up with transfer
     And User click take photo
     And User take the photo using camera
     And User click upload
-    Then User see payment succesful pop up with the amount they buy
+    Then User see payment successful pop up with the amount they buy
     And the destination phone number
 
     Examples:
