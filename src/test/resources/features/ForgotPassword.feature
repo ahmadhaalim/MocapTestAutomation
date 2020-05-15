@@ -10,6 +10,7 @@ Feature: Forgot Password Functionality Check
     @FPpageToFPVpage
     Scenario: Registered user directed to forgot password verification page
       When user input email or phone number "dummy1@gmail.com" on forgot password page
+      And user click next button on forgot password page
       Then user directed to forgot password verification page
 
     @FP025-031 @FP056-062
@@ -17,6 +18,7 @@ Feature: Forgot Password Functionality Check
       When user input email or phone number "dummy1@gmail.com" on forgot password page
       Then user directed to forgot password verification page
       When user input OTP "<otp>"
+      And user click next button on forgot password page
       Then user see warning toast on forgot password verification page "OTP is incorrect"
       Examples:
         | otp     |

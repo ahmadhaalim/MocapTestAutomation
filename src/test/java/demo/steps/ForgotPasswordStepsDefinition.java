@@ -2,6 +2,7 @@ package demo.steps;
 
 import demo.pages.ForgotPasswordPage;
 import demo.pages.ForgotPasswordVerificationPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -42,5 +43,10 @@ public class ForgotPasswordStepsDefinition {
     public void userSeeNextButtonIsNotActive() {
         boolean actual = forgotPasswordPage.checkIfNextButtonIsEnabled();
         Assert.assertFalse(actual);
+    }
+
+    @And("user click next button on forgot password page")
+    public void userClickNextButtonOnForgotPasswordPage() {
+        forgotPasswordPage.clickNextButton();
     }
 }
