@@ -52,4 +52,10 @@ public class UserRegisterStepsDefinition {
     public void userSeeWarningTextBelowInputField() {
 
     }
+
+    @Then("user see warning register button is not active")
+    public void userSeeWarningRegisterButtonIsNotActive() {
+        boolean actual = registerPage.checkIfRegisterButtonIsEnabled();
+        Assert.assertFalse(actual);
+    }
 }

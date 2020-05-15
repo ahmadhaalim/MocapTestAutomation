@@ -17,4 +17,9 @@ public class RegisterPage extends AndroidPageObject {
     public void clickRegisterButton(){clickOn(RegisterPageLocator.BUTTON_REGISTER);}
     public void clickBackButton(){clickOn(RegisterPageLocator.BUTTON_BACK);}
     public String getToastMessage() { return checkToast(RegisterPageLocator.TOAST_POPUP); }
+
+    public boolean checkIfRegisterButtonIsEnabled() {
+        return checkIfEnabled(RegisterPageLocator.BUTTON_REGISTER);
+    }
+
 }

@@ -37,13 +37,6 @@ public class UserLoginStepsDefinition {
         loginPage.clickLoginButton();
     }
 
-    @Then("user directed to home page")
-    public void userDirectedToHomePage() {
-        mobileChargePage.isOnPage();
-        boolean actual = mobileChargePage.checkDefaultNumberIsDisplayed();
-        Assert.assertTrue(actual);
-    }
-
     @Then("user see warning toast on login page {string}")
     public void userSeeWarningToastOnLoginPage(String comparison) {
         String toast = loginPage.getToastMessage();
@@ -79,4 +72,12 @@ public class UserLoginStepsDefinition {
         boolean actual = registerPage.checkIfRegisterButtonIsDisplayed();
         Assert.assertTrue(actual);
     }
+
+    @Then("user directed to home page and see toast {string}")
+    public void userDirectedToHomePageAndSeeToast(String comparison) {
+        mobileChargePage.isOnPage();
+        String toast = mobileChargePage.getToastMessage();
+        Assert.assertEquals(toast, comparison);
+    }
+
 }

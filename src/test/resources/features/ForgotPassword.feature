@@ -9,7 +9,7 @@ Feature: Forgot Password Functionality Check
 
     @FPpageToFPVpage
     Scenario: Registered user directed to forgot password verification page
-      When user input email or phone number "dummy1@gmail.com" on forgot password page
+      When user input email or phone number "ririn@gmail.com" on forgot password page
       And user click next button on forgot password page
       Then user directed to forgot password verification page
 

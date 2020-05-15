@@ -23,7 +23,7 @@ Feature: User Register Functionality Check
       And user input password "<password>" on register page
       And user input password confirmation "<passwordConfirmation>" on register page
       And user click register button
-      Then user see warning toast on register page "Input Format is Incorrect"
+      Then user see warning register button is not active
       Examples:
         | email            | phoneNumber  | password      | passwordConfirmation |
         | dummy1@gmail.com | 081271465456 | PASSword123?! | pass                 |
@@ -61,7 +61,6 @@ Feature: User Register Functionality Check
         |                  |              | PASSword123?! |                      |
         |                  |              | pass          |                      |
         |                  |              |               | pass                 |
-        |                  |              |               |                      |
         | dummy1           | 081271465456 | PASSword123?! | pass                 |
         | dummy1           | 081271465456 | pass          | pass                 |
         | dummy1           | 081271465456 | PASSword123?! |                      |
@@ -80,46 +79,3 @@ Feature: User Register Functionality Check
         | dummy1           |              | pass          |                      |
         | dummy1           |              |               | pass                 |
         | dummy1           |              |               |                      |
-
-    @UR067-69 @UR079
-    Scenario Outline: User input incorrect or empty email format
-      When user input email "<email>" on register page
-      Then user see warning text below input field
-      Examples:
-        | email      |
-        | dummy1@    |
-        | @gmail.com |
-        | dummy1     |
-        |            |
-
-    @UR071-072 @UR80
-    Scenario Outline: User input incorrect or empty email format
-      When user input phone number "<phoneNumber>" on register page
-      Then user see warning text below input field
-      Examples:
-        | phoneNumber     |
-        | 08123456        |
-        | 081234567890123 |
-        |                 |
-
-    @UR072-077 @UR81
-    Scenario Outline: User input incorrect or empty email format
-      When user input password "<password>" on register page
-      Then user see warning text below input field
-      Examples:
-        | password      |
-        | PASSw3?       |
-        | password123?! |
-        | PASSWORD123?! |
-        | PassWord1     |
-        | PassWord!     |
-        |               |
-
-    @UR82 @UR83
-    Scenario Outline: User input incorrect or empty email format
-      When user input password confirmation "<passwordConfirmation>" on register page
-      Then user see warning text below input field
-      Examples:
-        | passwordConfirmation |
-        | PassWord!            |
-        |                      |
