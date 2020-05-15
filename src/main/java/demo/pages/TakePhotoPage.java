@@ -1,7 +1,12 @@
 package demo.pages;
 
 import demo.interfaces.TakePhotoPageLocator;
+import demo.webdriver.AndroidDriverInstance;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
+import org.openqa.selenium.By;
 import pageobjects.AndroidPageObject;
+
 
 public class TakePhotoPage extends AndroidPageObject {
     public void clickBackButton() {
@@ -24,4 +29,8 @@ public class TakePhotoPage extends AndroidPageObject {
         return checkIfDisplayed(TakePhotoPageLocator.PAYMENT_CONFIRMATION_DIRECT);
     }
 
+    public void cameraTakePhoto(){
+        //AndroidDriverInstance.androidDriver.pressKey(new KeyEvent(AndroidKey.CAMERA));
+        AndroidDriverInstance.androidDriver.findElement(By.name("Camera")).click();
+    }
 }

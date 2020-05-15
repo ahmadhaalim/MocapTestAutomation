@@ -155,4 +155,9 @@ public class MobileChargeDefs {
     public void userClickTakePhoto() {
         takePhotoPage.clickTakePhoto();
     }
+
+    @And("User take the photo using camera")
+    public void userTakeThePhotoUsingCamera() {
+        takePhotoPage.cameraTakePhoto();
+    }
 }

@@ -4,10 +4,10 @@ Feature: Mobile charge top up with In App Balance
 
   Background:
     Given user is on login page
-    When user input email or phone number "dummy@gmail.com"
-    And user input password "PASSword123?!"
+    When user input email or phone number "087800001111"
+    And user input password "Ririn@123"
     And user click login button
-    Then user directed to home page
+    And user directed to home page
 
   @UMB001
   Scenario: User successfully do mobile credit top up with In App Balance using default number
@@ -46,10 +46,9 @@ Feature: Mobile charge top up with In App Balance
     And User click Pay Now
     Then User see payment successful pop up with the amount they buy
     And the destination phone number
-
     Examples:
       | phone_number | provider  |
-      | 859567890123 | XL
+      | 859567890123 | XL        |
       | 877567890123 | XL        |
       | 878567890123 | XL        |
       | 817567890123 | XL        |
@@ -243,7 +242,7 @@ Feature: Mobile charge top up with In App Balance
       | 8385678901234 |
       | 8315678901234 |
 
-    @
+
   Scenario Outline: User manually input valid number but app failed to connect to server
     Given User is on the mobile top up page
     When User manually input "<phone_number>"

@@ -6,7 +6,7 @@ Feature: Mobile charge top up with transfer
     When user input email or phone number "dummy@gmail.com"
     And user input password "PASSword123?!"
     And user click login button
-    Then user directed to home page
+    And user directed to home page
 
   @UMD163
   Scenario: User click back button when in the take photo page
@@ -39,10 +39,9 @@ Feature: Mobile charge top up with transfer
     And User click upload
     Then User see payment successful pop up with the amount they buy
     And the destination phone number
-
     Examples:
       | phone_number | provider  |
-      | 859567890123 | XL
+      | 859567890123 | XL        |
       | 877567890123 | XL        |
       | 878567890123 | XL        |
       | 817567890123 | XL        |
