@@ -1,7 +1,6 @@
 package demo.pages;
 
 import demo.interfaces.ForgotPasswordPageLocator;
-import demo.interfaces.HomePageLocator;
 import demo.interfaces.RegisterPageLocator;
 import pageobjects.AndroidPageObject;
 
