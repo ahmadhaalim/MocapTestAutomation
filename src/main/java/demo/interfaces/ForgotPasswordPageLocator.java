@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 public interface ForgotPasswordPageLocator {
 
-    By BUTTON_NEXT = MobileBy.id("");
+    By BUTTON_NEXT = MobileBy.id("btn_forgot_password_next");
     By EMAILORPHONE_FIELD = MobileBy.id("");
     By TOAST_POPUP = MobileBy.xpath("//android.widget.Toast[1]");
 }

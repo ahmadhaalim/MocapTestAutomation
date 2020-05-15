@@ -1,7 +1,7 @@
 package demo.steps;
 
 import demo.pages.ForgotPasswordPage;
-import demo.pages.HomePage;
+import demo.pages.MobileChargePage;
 import demo.pages.LoginPage;
 import demo.pages.RegisterPage;
 import io.cucumber.java.en.And;
@@ -13,7 +13,7 @@ import org.junit.Assert;
 public class UserLoginStepsDefinition {
 
     LoginPage loginPage = new LoginPage();
-    HomePage homePage = new HomePage();
+    MobileChargePage mobileChargePage = new MobileChargePage();
     ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
     RegisterPage registerPage = new RegisterPage();
 
@@ -39,8 +39,8 @@ public class UserLoginStepsDefinition {
 
     @Then("user directed to home page")
     public void userDirectedToHomePage() {
-        homePage.isOnPage();
-        boolean actual = homePage.checkDefaultNumberIsDisplayed();
+        mobileChargePage.isOnPage();
+        boolean actual = mobileChargePage.checkDefaultNumberIsDisplayed();
         Assert.assertTrue(actual);
     }
 
