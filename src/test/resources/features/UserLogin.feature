@@ -12,11 +12,11 @@ Feature: User Login Functionality Check
     And user click login button
     Then user directed to home page and see toast "success"
     Examples:
-      | identifier      | password     |
-      | dummy@gmail.com | Password@123 |
-      | 081271465455    | Password@123 |
-      | 6281271465455   | Password@123 |
-      | +6281271465455  | Password@123 |
+      | identifier      | password |
+      | dummy@gmail.com | Pass@123 |
+      | 081271465455    | Pass@123 |
+      | 6281271465455   | Pass@123 |
+      | +6281271465455  | Pass@123 |
 
 
   @UL005 @UL018
