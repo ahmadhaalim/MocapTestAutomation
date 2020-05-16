@@ -8,14 +8,14 @@ public interface MobileChargePageLocator {
     By PROVIDER_LOGO = MobileBy.id("iv_logo_provider");
     By HISTORY_TAB = MobileBy.id("menu_history");
     By ACCOUNT_TAB = MobileBy.id("menu_profile");
-    By PRICE_OPTIONS = MobileBy.id("cv_credit_amount_main");
+    By PRICE_OPTIONS = MobileBy.id("tv_item_list_price");
     By TOAST_POPUP = MobileBy.xpath("//android.widget.Toast[1]");
 
     By PAYMENT_POPUP_PRICE = MobileBy.id("tv_amount_pay");
-    By PAYMENT_POPUP_BALANCE_RADIO = MobileBy.id("radio_app_balance_main");
-    By PAYMENT_POPUP_DIRECT_RADIO = MobileBy.id("radio_direct_transfer_main");
-    By PAYMENT_POPUP_PAYNOW = MobileBy.id("btn_pay_now_main");
-    By PAYMENT_POPUP_EXIT = MobileBy.id("");
+    By PAYMENT_POPUP_BALANCE_RADIO = MobileBy.id("rb_app_balance");
+    By PAYMENT_POPUP_DIRECT_RADIO = MobileBy.id("rb_direct");
+    By PAYMENT_POPUP_PAYNOW = MobileBy.id("cv_pay_now");
+    By PAYMENT_POPUP_EXIT = MobileBy.id("iv_close_bottom_sheet");
 
     By PAYMENT_SUCCESSFUL_PRICE = MobileBy.id("tv_message_2");
     By PAYMENT_SUCCESSFUL_DESTINATION = MobileBy.id("tv_message_4");

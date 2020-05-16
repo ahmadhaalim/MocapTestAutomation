@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         stepNotifications = true,
         //for plugin check https://cucumber.io/docs/cucumber/reporting/
         plugin = {"json:build/cucumber.json", "pretty", "html:build/result"},
-        features = "src/test/resources/features", tags = {"@UL003-005"})
+        features = "src/test/resources/features", tags = {"@UMB003-042"})
 public class CucumberRunner {
 
 }

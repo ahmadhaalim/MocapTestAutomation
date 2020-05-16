@@ -4,8 +4,8 @@ Feature: Mobile charge top up with In App Balance
 
   Background:
     Given user is on login page
-    When user input email or phone number "087800001111"
-    And user input password "Ririn@123"
+    When user input email or phone number "tester1@gmail.com"
+    And user input password "Tester1@123"
     And user click login button
     And user directed to home page
 
@@ -150,7 +150,7 @@ Feature: Mobile charge top up with In App Balance
   Scenario Outline: User see warning invalid number, If user input 8 digit number with valid provider
     Given User is on the mobile top up page
     When User manually input "<phone_number>"
-    Then User see warning invalid number format
+    Then User can't see the mobile options
     Examples:
       | phone_number |
       | 85956789     |
@@ -198,7 +198,7 @@ Feature: Mobile charge top up with In App Balance
   Scenario Outline: User see warning invalid number, If user input 13 digit number with valid provider
     Given User is on the mobile top up page
     When User manually input "<phone_number>"
-    Then User see warning invalid number format
+    Then User can't see the mobile options
     Examples:
       | phone_number  |
       | 8595678901234 |

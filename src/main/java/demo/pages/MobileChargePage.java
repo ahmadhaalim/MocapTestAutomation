@@ -9,6 +9,13 @@ import java.util.List;
 import java.util.Random;
 
 public class MobileChargePage extends AndroidPageObject {
+    public void isOnPage() {
+        waitUntilDisplayed(MobileChargePageLocator.INPUT_PHONE);
+    }
+    public boolean checkDefaultNumberIsDisplayed() {
+        return checkIfDisplayed(MobileChargePageLocator.INPUT_PHONE);
+    }
+
     public boolean isInMainPage() {
         return checkIfDisplayed(MobileChargePageLocator.INPUT_PHONE);
     }
@@ -23,8 +30,9 @@ public class MobileChargePage extends AndroidPageObject {
         typeON(MobileChargePageLocator.INPUT_PHONE,number);
     }
 
-    public void mobileChargeOptionsIsDisplayed() {
-        waitUntilDisplayed(MobileChargePageLocator.PRICE_OPTIONS);
+    public boolean mobileChargeOptionsIsDisplayed() {
+        return checkIfDisplayed(MobileChargePageLocator.PRICE_OPTIONS);
+//        waitUntilDisplayed(MobileChargePageLocator.PRICE_OPTIONS);
     }
 
     public void providerIsDisplayed() {
@@ -42,22 +50,22 @@ public class MobileChargePage extends AndroidPageObject {
         int choice = 0;
         switch (provider) {
             case "XL":
-                choice = random(11);
+                choice = random(3);
                 break;
             case "TELKOMSEL":
-                choice = random(12);
+                choice = random(5);
                 break;
             case "TRI":
-                choice = random(16);
+                choice = random(1);
                 break;
             case "INDOSAT":
-                choice = random(14);
+                choice = random(5);
                 break;
             case "SMARTFREN":
-                choice = random(12);
+                choice = random(3);
                 break;
             case "AXIS":
-                choice = random(8);
+                choice = random(1);
                 break;
         }
         List<AndroidElement> options = AndroidDriverInstance.androidDriver

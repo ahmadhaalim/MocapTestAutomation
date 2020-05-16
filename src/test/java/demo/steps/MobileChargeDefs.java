@@ -14,6 +14,7 @@ public class MobileChargeDefs {
     MobileChargePage mobileChargePage = new MobileChargePage();
     String defaultNumber = "";
     String price = "";
+
     TakePhotoPage takePhotoPage = new TakePhotoPage();
     HistoryPage historyPage = new HistoryPage();
 
@@ -35,7 +36,7 @@ public class MobileChargeDefs {
 
     @And("User see mobile charge options")
     public void userSeeMobileChargeOptions() {
-        mobileChargePage.mobileChargeOptionsIsDisplayed();
+        Assert.assertTrue(mobileChargePage.mobileChargeOptionsIsDisplayed());
     }
 
     @When("User choose one of the {string} options")
@@ -47,6 +48,7 @@ public class MobileChargeDefs {
     @And("User see the choose payment method pop-up with correct amount to pay")
     public void userSeeTheChoosePaymentMethodPopUpWithCorrectAmountToPay() {
         String paymentprice = mobileChargePage.paymentMethodPopUpWithPrice();
+        paymentprice = paymentprice.replaceAll("\\D", "");
         Assert.assertEquals(price, paymentprice);
     }
 
@@ -69,7 +71,12 @@ public class MobileChargeDefs {
     @And("the destination phone number")
     public void theDestinationPhoneNumber() {
         String destinationnumber = mobileChargePage.paymentDestinationSuccess();
-        Assert.assertEquals("+62" + defaultNumber, destinationnumber);
+//        Assert.assertEquals("0" + defaultNumber, destinationnumber);
+        String option1 = "0"+defaultNumber;
+        System.out.println(option1);
+        String option2 = "+62"+defaultNumber;
+        System.out.println(option2);
+        Assert.assertTrue(option1.equals(destinationnumber)||option2.equals(destinationnumber));
     }
 
     @And("User click exit button on the pop up")
@@ -83,22 +90,22 @@ public class MobileChargeDefs {
         Assert.assertTrue(result);
     }
 
-    @Then("User see warning invalid number format")
-    public void userSeeWarningInvalidNumberFormat() {
-        String result = "";
-        String warning = "";
-        Assert.assertEquals(warning, result);
+    @Then("User can't see the mobile options")
+    public void userCantSeeMobileOptions() {
+        Assert.assertFalse(mobileChargePage.mobileChargeOptionsIsDisplayed());
     }
 
 
     @When("User manually input {string}")
     public void userManuallyInput(String number) {
         mobileChargePage.inputNumber(number);
+        defaultNumber =  number;
     }
 
     @When("User choose one of the options")
     public void userChooseOneOfTheOptions() {
         price = mobileChargePage.chooseFirstOption();
+        price = price.replaceAll("\\D", "");
     }
 
     @And("User click direct transfer")

@@ -22,7 +22,8 @@ public class AndroidDriverInstance {
         caps.setCapability("autoGrantPermissions", true);
         caps.setCapability("newCommandTimeout", 120);
         caps.setCapability("app",
-                System.getProperty("user.dir") + File.separator + "APP" + File.separator + "app-debug.apk");
+                System.getProperty("user.dir") + File.separator + "APP" + File.separator +
+                        "app-debug-fix-canceling_trans-v1.0.1.0.apk");
         caps.setCapability("automationName", "UiAutomator2");
 //        caps.setCapability("noReset","true");
         try {
