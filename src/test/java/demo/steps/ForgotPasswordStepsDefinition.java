@@ -25,7 +25,7 @@ public class ForgotPasswordStepsDefinition {
     @Then("user directed to forgot password verification page")
     public void userDirectedToForgotPasswordVerificationPage() {
         forgotPasswordVerificationPage.isOnPage();
-        boolean actual = forgotPasswordVerificationPage.checkIfNextButtonIsDisplayed();
+        boolean actual = forgotPasswordVerificationPage.checkIfVerifyButtonIsDisplayed();
         Assert.assertTrue(actual);
     }
 
@@ -48,5 +48,16 @@ public class ForgotPasswordStepsDefinition {
     @And("user click next button on forgot password page")
     public void userClickNextButtonOnForgotPasswordPage() {
         forgotPasswordPage.clickNextButton();
+    }
+
+    @Then("user see button verify doesn't active")
+    public void userSeeButtonVerifyDoesnTActive() {
+        boolean actual = forgotPasswordVerificationPage.checkIfVerifyButtonIsEnabled();
+        Assert.assertFalse(actual);
+    }
+
+    @And("user click verify button")
+    public void userClickVerifyButton() {
+        forgotPasswordVerificationPage.clickVerifyButton();
     }
 }

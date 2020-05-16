@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         //for plugin check https://cucumber.io/docs/cucumber/reporting/
         plugin = {"json:build/cucumber.json", "pretty", "html:build/result"},
         features = "src/test/resources/features",
-        tags = {"@UR016-066"})
+        tags = {"@FPpageToFPVpage"})
 public class CucumberRunner {
 
 }

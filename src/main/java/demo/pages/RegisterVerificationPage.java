@@ -7,9 +7,9 @@ import pageobjects.AndroidPageObject;
 public class RegisterVerificationPage extends AndroidPageObject {
 
     public void isOnPage() {
-        waitUntilDisplayed(RegisterVerificationPageLocator.BUTTON_NEXT);
+        waitUntilDisplayed(RegisterVerificationPageLocator.BUTTON_VERIFY);
     }
     public boolean checkIfRegisterButtonIsDisplayed() {
-        return checkIfDisplayed(RegisterVerificationPageLocator.BUTTON_NEXT);
+        return checkIfDisplayed(RegisterVerificationPageLocator.BUTTON_VERIFY);
     }
 }
