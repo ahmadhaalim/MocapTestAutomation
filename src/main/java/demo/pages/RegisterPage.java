@@ -11,15 +11,16 @@ public class RegisterPage extends AndroidPageObject {
         return checkIfDisplayed(RegisterPageLocator.BUTTON_REGISTER);
     }
     public void inputEmail(String email) {typeON(RegisterPageLocator.EMAIL_FIELD, email);}
+    public void inputName(String name){typeON(RegisterPageLocator.NAME_FIELD, name);}
     public void inputPhoneNumber(String phoneNumber) {typeON(RegisterPageLocator.PHONE_FIELD, phoneNumber);}
     public void inputPassword(String password) {typeON(RegisterPageLocator.PASSWORD_FIELD, password);}
     public void inputPasswordConfirmation(String passwordConfirmation) {typeON(RegisterPageLocator.PASSWORDCONFIRM_FIELD, passwordConfirmation);}
     public void clickRegisterButton(){clickOn(RegisterPageLocator.BUTTON_REGISTER);}
     public void clickBackButton(){clickOn(RegisterPageLocator.BUTTON_BACK);}
     public String getToastMessage() { return checkToast(RegisterPageLocator.TOAST_POPUP); }
-
     public boolean checkIfRegisterButtonIsEnabled() {
         return checkIfEnabled(RegisterPageLocator.BUTTON_REGISTER);
     }
+
 
 }

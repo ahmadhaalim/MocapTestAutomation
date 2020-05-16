@@ -58,4 +58,9 @@ public class UserRegisterStepsDefinition {
         boolean actual = registerPage.checkIfRegisterButtonIsEnabled();
         Assert.assertFalse(actual);
     }
+
+    @When("user input name {string}on register page")
+    public void userInputNameOnRegisterPage(String name) {
+        registerPage.inputName(name);
+    }
 }

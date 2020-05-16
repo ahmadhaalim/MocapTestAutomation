@@ -85,4 +85,11 @@ public class AndroidPageObject {
         WebElement toast = androidDriver.findElement(id);
         return toast.getAttribute("name");
     }
+
+    public boolean checkIfToastDisplayed(By id) {
+        WebElement toast = androidDriver.findElement(id);
+        return toast.isDisplayed();
+    }
+
+
 }

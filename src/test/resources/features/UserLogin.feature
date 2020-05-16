@@ -12,9 +12,12 @@ Feature: User Login Functionality Check
     And user click login button
     Then user directed to home page and see toast "success"
     Examples:
-      | identifier      | password  |
-      | ririn@gmail.com | M4has!swa |
-      | 087800001111    | M4has!swa |
+      | identifier      | password     |
+      | dummy@gmail.com | Password@123 |
+      | 081271465455    | Password@123 |
+      | 6281271465455   | Password@123 |
+      | +6281271465455  | Password@123 |
+
 
   @UL005 @UL018
   Scenario Outline: Registered user failed to login with valid email/phone number because password is invalid
@@ -24,8 +27,10 @@ Feature: User Login Functionality Check
     Then user see warning toast on login page "Wrong username or password"
     Examples:
       | identifier      | password |
-      | ririn@gmail.com | 123      |
-      | 087800001111    | 123      |
+      | dummy@gmail.com | 123      |
+      | 081271465455    | 123      |
+      | 6281271465455   | 123      |
+      | +6281271465455  | 123      |
 
   @UL006 @UL011-013 @UL019 @UL024-026
   Scenario Outline: User failed to login because one or all of input field is empty
@@ -34,13 +39,21 @@ Feature: User Login Functionality Check
     And user click login button
     Then user see login button doesn't active
     Examples:
-      | identifier       | password      |
-      | dummy@gmail.com  |               |
-      | dummy2@gmail.com |               |
-      | 081271465456     |               |
-      | 08123456789      |               |
-      |                  | PASSword123?! |
-      |                  |               |
+      | identifier       | password |
+      | dummy@gmail.com  |          |
+      | dummy2@gmail.com |          |
+      | 6281271465455    |          |
+      | +6281271465455   |          |
+      | 081271465456     |          |
+      | 08123456789      |          |
+      |                  |          |
+
+  @UL014 @UL29
+  Scenario: User failed to login because email / phone number field is empty
+    When user input email or phone number ""
+    And user input password "pass123"
+    And user click login button
+    Then user see warning toast on login page "Field cannot be empty."
 
   @UL007 @UL020
   Scenario Outline: User failed to login because email or phone number is unregistered
@@ -61,8 +74,10 @@ Feature: User Login Functionality Check
     Then user see warning toast on login page "Connection Error"
     Examples:
       | identifier       | password       |
-      | ririn@gmail.com  | M4has!swa      |
-      | 087800001111     | M4has!swa      |
+      | dummy@gmail.com  | Password@123   |
+      | 081271465455     | Password@123   |
+      | 6281271465455    | Password@123   |
+      | +6281271465455   | Password@123   |
       | dummy2@gmail.com | KATAsandi456?! |
       | 08123456789      | KATAsandi456?! |
 
