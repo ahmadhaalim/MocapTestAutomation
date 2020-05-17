@@ -23,12 +23,12 @@ public class AndroidDriverInstance {
         caps.setCapability("newCommandTimeout", 120);
         caps.setCapability("app",
                 System.getProperty("user.dir") + File.separator + "APP" + File.separator +
-                        "app-debug-fix-canceling_trans-v1.0.1.0.apk");
+                        "mocap-v.1.5.apk");
         caps.setCapability("automationName", "UiAutomator2");
 //        caps.setCapability("noReset","true");
         try {
             androidDriver = new AndroidDriver<>(new URL(appiumUrl), caps);
-            androidDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            androidDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

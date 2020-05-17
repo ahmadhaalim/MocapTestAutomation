@@ -12,6 +12,7 @@ public class MobileChargePage extends AndroidPageObject {
     public void isOnPage() {
         waitUntilDisplayed(MobileChargePageLocator.INPUT_PHONE);
     }
+
     public boolean checkDefaultNumberIsDisplayed() {
         return checkIfDisplayed(MobileChargePageLocator.INPUT_PHONE);
     }
@@ -26,12 +27,15 @@ public class MobileChargePage extends AndroidPageObject {
         return editText.getText();
     }
 
-    public void inputNumber(String number){
-        typeON(MobileChargePageLocator.INPUT_PHONE,number);
+    public void inputNumber(String number) {
+        typeON(MobileChargePageLocator.INPUT_PHONE, number);
     }
 
     public boolean mobileChargeOptionsIsDisplayed() {
-        return checkIfDisplayed(MobileChargePageLocator.PRICE_OPTIONS);
+        List<AndroidElement> choices = AndroidDriverInstance.androidDriver.
+                findElements(MobileChargePageLocator.PRICE_OPTIONS);
+        return choices.size() > 0;
+
 //        waitUntilDisplayed(MobileChargePageLocator.PRICE_OPTIONS);
     }
 
@@ -39,7 +43,7 @@ public class MobileChargePage extends AndroidPageObject {
         waitUntilDisplayed(MobileChargePageLocator.PROVIDER_LOGO);
     }
 
-    public String chooseFirstOption(){
+    public String chooseFirstOption() {
         String price = AndroidDriverInstance.androidDriver
                 .findElement(MobileChargePageLocator.PRICE_OPTIONS).getText();
         clickOn(MobileChargePageLocator.PRICE_OPTIONS);
@@ -70,64 +74,63 @@ public class MobileChargePage extends AndroidPageObject {
         }
         List<AndroidElement> options = AndroidDriverInstance.androidDriver
                 .findElements(MobileChargePageLocator.PRICE_OPTIONS);
-        String price =  options.get(choice).getText();
+        String price = options.get(choice).getText();
         options.get(choice).click();
         return price;
     }
 
-    public String paymentMethodPopUpWithPrice(){
+    public String paymentMethodPopUpWithPrice() {
         AndroidElement price = AndroidDriverInstance.androidDriver
                 .findElement(MobileChargePageLocator.PAYMENT_POPUP_PRICE);
         return price.getText();
     }
 
-    public void paymentClickBalance(){
+    public void paymentClickBalance() {
         clickOn(MobileChargePageLocator.PAYMENT_POPUP_BALANCE_RADIO);
     }
 
-    public void paymentClickDirect(){
+    public void paymentClickDirect() {
         clickOn(MobileChargePageLocator.PAYMENT_POPUP_DIRECT_RADIO);
     }
 
-    public void paymentClickPayNow(){
+    public void paymentClickPayNow() {
         clickOn(MobileChargePageLocator.PAYMENT_POPUP_PAYNOW);
     }
 
-    public void paymentClickExit(){
+    public void paymentClickExit() {
         clickOn(MobileChargePageLocator.PAYMENT_POPUP_EXIT);
     }
 
-    public String paymentPriceSuccess(){
+    public String paymentPriceSuccess() {
         AndroidElement price = AndroidDriverInstance.androidDriver
                 .findElement(MobileChargePageLocator.PAYMENT_SUCCESSFUL_PRICE);
-        return price.getText().replaceAll("\\D","");
+        return price.getText().replaceAll("\\D", "");
     }
 
-    public String paymentDestinationSuccess(){
+    public String paymentDestinationSuccess() {
         AndroidElement destination = AndroidDriverInstance.androidDriver
                 .findElement(MobileChargePageLocator.PAYMENT_SUCCESSFUL_DESTINATION);
         return destination.getText();
     }
 
-    public void clickTakePhotoReceipt(){
-        clickOn(MobileChargePageLocator.PAYMENT_DIRECT_POPUP_PHOTORECEIPT_BUTTON);
+    public void clickPaymentDirectNext() {
+        clickOn(MobileChargePageLocator.PAYMENT_DIRECT_POPUP_NEXT_BUTTON);
     }
 
-    public boolean TakePhotoReceiptIsDisplayed(){
-        return checkIfDisplayed(MobileChargePageLocator.PAYMENT_DIRECT_POPUP_PHOTORECEIPT_BUTTON);
+    public boolean TakePhotoReceiptIsDisplayed() {
+        return checkIfDisplayed(MobileChargePageLocator.PAYMENT_DIRECT_POPUP_NEXT_BUTTON);
     }
 
-    public void clickOkPaymentConfirmation(){
+    public void clickOkPaymentConfirmation() {
         clickOn(MobileChargePageLocator.PAYMENT_SUCCESSFUL_CONFIRM);
     }
 
-    public void clickHistoryMenu(){
+    public void clickHistoryMenu() {
         clickOn(MobileChargePageLocator.HISTORY_TAB);
     }
 
 
-
-    public String getToast(){
+    public String getToast() {
         return checkToast(MobileChargePageLocator.TOAST_POPUP);
     }
 

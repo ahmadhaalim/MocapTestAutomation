@@ -2,6 +2,7 @@ package demo.pages;
 
 import demo.interfaces.TakePhotoPageLocator;
 import demo.webdriver.AndroidDriverInstance;
+import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import org.openqa.selenium.By;
@@ -31,6 +32,11 @@ public class TakePhotoPage extends AndroidPageObject {
 
     public void cameraTakePhoto(){
         //AndroidDriverInstance.androidDriver.pressKey(new KeyEvent(AndroidKey.CAMERA));
-        AndroidDriverInstance.androidDriver.findElement(By.name("Camera")).click();
+//        AndroidDriverInstance.androidDriver.findElement(By.name("Camera")).click();
+        AndroidElement photo = AndroidDriverInstance.androidDriver.findElement(By.id("shutter_button"));
+        photo.click();
+        AndroidElement confirm = AndroidDriverInstance.androidDriver.findElement(By.id("done_button"));
+        confirm.click();
     }
+
 }

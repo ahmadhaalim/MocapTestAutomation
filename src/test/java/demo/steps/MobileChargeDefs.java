@@ -1,6 +1,5 @@
 package demo.steps;
 
-import demo.interfaces.TakePhotoPageLocator;
 import demo.pages.HistoryPage;
 import demo.pages.MobileChargePage;
 import demo.pages.TakePhotoPage;
@@ -92,6 +91,7 @@ public class MobileChargeDefs {
 
     @Then("User can't see the mobile options")
     public void userCantSeeMobileOptions() {
+        System.out.println(mobileChargePage.mobileChargeOptionsIsDisplayed());
         Assert.assertFalse(mobileChargePage.mobileChargeOptionsIsDisplayed());
     }
 
@@ -113,9 +113,9 @@ public class MobileChargeDefs {
         mobileChargePage.paymentClickDirect();
     }
 
-    @And("User click take photo receipt")
+    @And("User click next on payment direct pop up")
     public void userClickTakePhotoReceipt() {
-        mobileChargePage.clickTakePhotoReceipt();
+        mobileChargePage.clickPaymentDirectNext();
     }
 
 
@@ -125,9 +125,9 @@ public class MobileChargeDefs {
     }
 
 
-    @Then("User is back to the direct transfer pop up")
-    public void userIsBackToTheDirectTransferPopUp() {
-        boolean result = mobileChargePage.TakePhotoReceiptIsDisplayed();
+    @Then("User is back to main page")
+    public void userIsBackToTheMainPage() {
+        boolean result = mobileChargePage.isInMainPage();
         Assert.assertTrue(result);
     }
 
@@ -166,5 +166,9 @@ public class MobileChargeDefs {
     @And("User take the photo using camera")
     public void userTakeThePhotoUsingCamera() {
         takePhotoPage.cameraTakePhoto();
+    }
+
+    @When("User manually input {string} with no data")
+    public void userManuallyInputWithNoData(String arg0) {
     }
 }
