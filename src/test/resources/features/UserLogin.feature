@@ -13,8 +13,8 @@ Feature: User Login Functionality Check
     Then user directed to home page and see toast "success"
     Examples:
       | identifier      | password |
-      | dummy@gmail.com | Pass@123 |
-      | 081271465455    | Pass@123 |
+      | dummy@gmail.com | dd |
+      | 081271465455    | dd |
       | 6281271465455   | Pass@123 |
       | +6281271465455  | Pass@123 |
 
