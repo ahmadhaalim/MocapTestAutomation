@@ -13,10 +13,9 @@ Feature: User Login Functionality Check
     Then user directed to home page and see toast "success"
     Examples:
       | identifier      | password |
-      | dummy@gmail.com | dd |
-      | 081271465455    | dd |
+      | dummy@gmail.com | Pass@123 |
+      | 081271465455    | Pass@123 |
       | 6281271465455   | Pass@123 |
-      | +6281271465455  | Pass@123 |
 
 
   @UL005 @UL018
@@ -30,7 +29,6 @@ Feature: User Login Functionality Check
       | dummy@gmail.com | 123      |
       | 081271465455    | 123      |
       | 6281271465455   | 123      |
-      | +6281271465455  | 123      |
 
   @UL006 @UL011-013 @UL019 @UL024-026
   Scenario Outline: User failed to login because one or all of input field is empty
@@ -43,7 +41,6 @@ Feature: User Login Functionality Check
       | dummy@gmail.com  |          |
       | dummy2@gmail.com |          |
       | 6281271465455    |          |
-      | +6281271465455   |          |
       | 081271465456     |          |
       | 08123456789      |          |
       |                  |          |
@@ -77,9 +74,6 @@ Feature: User Login Functionality Check
       | dummy@gmail.com  | Password@123   |
       | 081271465455     | Password@123   |
       | 6281271465455    | Password@123   |
-      | +6281271465455   | Password@123   |
-      | dummy2@gmail.com | KATAsandi456?! |
-      | 08123456789      | KATAsandi456?! |
 
   @UL027
   Scenario: User click forgot password text direction page
@@ -90,3 +84,8 @@ Feature: User Login Functionality Check
   Scenario: User click register text direction page
     When user click register text
     Then user directed to register page
+
+  @UL029
+  Scenario: User click validate account text direction page
+    When user click validate account text
+    Then user directed to validate account page

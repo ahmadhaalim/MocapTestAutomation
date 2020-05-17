@@ -12,6 +12,7 @@ public class LoginPage extends AndroidPageObject {
     public void inputPassword(String password) {typeON(LoginPageLocator.PASSWORD_FIELD, password);}
     public void clickForgotPasswordText() {clickOn(LoginPageLocator.BUTTON_FORGOTPASSWORD);}
     public void clickRegisterText(){clickOn(LoginPageLocator.BUTTON_REGISTER);}
+    public void clickValidateText(){clickOn(LoginPageLocator.BUTTON_VALIDATE);}
     public boolean checkLoginButton() {
         return checkIfEnabled(LoginPageLocator.BUTTON_LOGIN);
     }

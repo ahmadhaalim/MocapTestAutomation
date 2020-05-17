@@ -1,9 +1,6 @@
 package demo.steps;
 
-import demo.pages.ForgotPasswordPage;
-import demo.pages.MobileChargePage;
-import demo.pages.LoginPage;
-import demo.pages.RegisterPage;
+import demo.pages.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,6 +13,7 @@ public class UserLoginStepsDefinition {
     MobileChargePage mobileChargePage = new MobileChargePage();
     ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
     RegisterPage registerPage = new RegisterPage();
+    ValidateAccountPage validateAccountPage = new ValidateAccountPage();
 
     @Given("user is on login page")
     public void userIsOnLoginPage() {
@@ -40,7 +38,7 @@ public class UserLoginStepsDefinition {
     @Then("user see warning toast on login page {string}")
     public void userSeeWarningToastOnLoginPage(String comparison) {
         String toast = loginPage.getToastMessage();
-        Assert.assertEquals(toast, comparison);
+        Assert.assertEquals(comparison, toast);
     }
 
     @Then("user see login button doesn't active")
@@ -80,4 +78,13 @@ public class UserLoginStepsDefinition {
         Assert.assertEquals(toast, comparison);
     }
 
+    @When("user click validate account text")
+    public void userClickValidateAccountText() {
+        loginPage.clickValidateText();
+    }
+
+    @Then("user directed to validate account page")
+    public void userDirectedToValidateAccountPage() {
+        validateAccountPage.isOnPage();
+    }
 }

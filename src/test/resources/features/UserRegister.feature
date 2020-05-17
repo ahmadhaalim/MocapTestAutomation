@@ -9,10 +9,11 @@ Feature: User Register Functionality Check
 
   @URpageToRVpage
   Scenario: User input all correct register data format and directed to Register Verification Page
-    When user input email "dummy@gmail.com" on register page
-    And user input phone number "81271465450" on register page
-    And user input password "PASSword123?!" on register page
-    And user input password confirmation "PASSword123?!" on register page
+    When user input name "Halo"on register page
+    And user input email "dummy1000@gmail.com" on register page
+    And user input phone number "81280976788" on register page
+    And user input password "PASSword123?!!" on register page
+    And user input password confirmation "PASSword123?!!" on register page
     And user click register button
     Then user directed to register verification page
 
@@ -24,11 +25,11 @@ Feature: User Register Functionality Check
     And user input password "<password>" on register page
     And user input password confirmation "<passwordConfirmation>" on register page
     And user click register button
-    Then user see warning toast on register page "Email or phone number has been used"
+    Then user see warning toast on register page "Email or phone number have already registered"
     Examples:
       | name  | email             | phoneNumber | password | passwordConfirmation |
       | Dummy | dummy@gmail.com   | 81370000056 | Pass@123 | Pass@123             |
-      | Dummy | dummy00@gmail.com | 81271465450 | Pass@123 | Pass@123             |
+      | Dummy | dummy00@gmail.com | 81271465455 | Pass@123 | Pass@123             |
 
   @UR016-077
   Scenario Outline: User failed to register because input data format is incorrect or empty
@@ -38,7 +39,7 @@ Feature: User Register Functionality Check
     And user input password "<password>" on register page
     And user input password confirmation "<passwordConfirmation>" on register page
     And user click register button
-    Then user see warning register button is not active
+    Then user see warning toast on register page "Field Cannot Be Empty"
     Examples:
       | name  | email            | phoneNumber | password      | passwordConfirmation |
       |       | dummy2@gmail.com | 81271465450 | PASSword123?! | PASSword123?!        |
@@ -104,56 +105,38 @@ Feature: User Register Functionality Check
       |       | dummy1           |             | pass          |                      |
       |       | dummy1           |             |               | pass                 |
       |       | dummy1           |             |               |                      |
-      | Dummy | dummy2@gmail.com | 81271465450 | PASSword123?! | pass                 |
-      | Dummy | dummy2@gmail.com | 81271465450 | pass          | pass                 |
       | Dummy | dummy2@gmail.com | 81271465450 | PASSword123?! |                      |
       | Dummy | dummy2@gmail.com | 81271465450 | pass          |                      |
       | Dummy | dummy2@gmail.com | 81271465450 |               | pass                 |
       | Dummy | dummy2@gmail.com | 81271465450 |               |                      |
-      | Dummy | dummy2@gmail.com | 81234567    | PASSword123?! | pass                 |
-      | Dummy | dummy2@gmail.com | 81234567    | pass          | pass                 |
       | Dummy | dummy2@gmail.com | 81234567    | PASSword123?! |                      |
       | Dummy | dummy2@gmail.com | 81234567    | pass          |                      |
       | Dummy | dummy2@gmail.com | 81234567    |               | pass                 |
       | Dummy | dummy2@gmail.com | 81234567    |               |                      |
-      | Dummy | dummy2@gmail.com |             | PASSword123?! | pass                 |
-      | Dummy | dummy2@gmail.com |             | pass          | pass                 |
       | Dummy | dummy2@gmail.com |             | PASSword123?! |                      |
       | Dummy | dummy2@gmail.com |             | pass          |                      |
       | Dummy | dummy2@gmail.com |             |               | pass                 |
       | Dummy | dummy2@gmail.com |             |               |                      |
       | Dummy |                  | 81234567    |               | pass                 |
-      | Dummy |                  | 81271465450 | PASSword123?! | pass                 |
-      | Dummy |                  | 81271465450 | pass          | pass                 |
       | Dummy |                  | 81271465450 | PASSword123?! |                      |
       | Dummy |                  | 81271465450 | pass          |                      |
       | Dummy |                  | 81271465450 |               | pass                 |
       | Dummy |                  | 81271465450 |               |                      |
-      | Dummy |                  | 81234567    | PASSword123?! | pass                 |
-      | Dummy |                  | 81234567    | pass          | pass                 |
       | Dummy |                  | 81234567    | PASSword123?! |                      |
       | Dummy |                  | 81234567    | pass          |                      |
       | Dummy |                  | 81234567    |               | pass                 |
       | Dummy |                  | 81234567    |               |                      |
-      | Dummy |                  |             | PASSword123?! | pass                 |
-      | Dummy |                  |             | pass          | pass                 |
       | Dummy |                  |             | PASSword123?! |                      |
       | Dummy |                  |             | pass          |                      |
       | Dummy |                  |             |               | pass                 |
-      | Dummy | dummy1           | 81271465450 | PASSword123?! | pass                 |
-      | Dummy | dummy1           | 81271465450 | pass          | pass                 |
       | Dummy | dummy1           | 81271465450 | PASSword123?! |                      |
       | Dummy | dummy1           | 81271465450 | pass          |                      |
       | Dummy | dummy1           | 81271465450 |               | pass                 |
       | Dummy | dummy1           | 81271465450 |               |                      |
-      | Dummy | dummy1           | 81234567    | PASSword123?! | pass                 |
-      | Dummy | dummy1           | 81234567    | pass          | pass                 |
       | Dummy | dummy1           | 81234567    | PASSword123?! |                      |
       | Dummy | dummy1           | 81234567    | pass          |                      |
       | Dummy | dummy1           | 81234567    |               | pass                 |
       | Dummy | dummy1           | 81234567    |               |                      |
-      | Dummy | dummy1           |             | PASSword123?! | pass                 |
-      | Dummy | dummy1           |             | pass          | pass                 |
       | Dummy | dummy1           |             | PASSword123?! |                      |
       | Dummy | dummy1           |             | pass          |                      |
       | Dummy | dummy1           |             |               | pass                 |

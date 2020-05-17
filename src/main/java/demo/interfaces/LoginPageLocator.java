@@ -10,6 +10,7 @@ public interface LoginPageLocator {
     By PASSWORD_FIELD = MobileBy.id("et_password_login");
     By BUTTON_FORGOTPASSWORD = MobileBy.id("tv_forgot_pasword");
     By BUTTON_REGISTER = MobileBy.id("tv_register_account");
+    By BUTTON_VALIDATE = MobileBy.id("tv_validate_account");
     By TOAST_POPUP = MobileBy.xpath("//android.widget.Toast[1]");
 
 

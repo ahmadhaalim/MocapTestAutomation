@@ -22,7 +22,7 @@ public class AndroidDriverInstance {
         caps.setCapability("autoGrantPermissions", true);
         caps.setCapability("newCommandTimeout", 120);
         caps.setCapability("app",
-                System.getProperty("user.dir") + File.separator + "APP" + File.separator + "app-debug-fix_api_hit-toast-v1.0.1.4.apk");
+                System.getProperty("user.dir") + File.separator + "APP" + File.separator + "mocap-v.1.6.apk");
         caps.setCapability("automationName", "UiAutomator2");
         try {
             androidDriver = new AndroidDriver<>(new URL(appiumUrl), caps);
