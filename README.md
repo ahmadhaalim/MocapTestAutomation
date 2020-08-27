@@ -1,3 +1,4 @@
 # MOCAPAutomation
 
-Automation Program for MOCAP Android Application (Team 2)
+Test Automation for MOCAP Android Application (Team 2)
+MOCAP is an Android based application used for mobile charge transaction
